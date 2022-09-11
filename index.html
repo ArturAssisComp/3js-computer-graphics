@@ -41,30 +41,155 @@
             const L = 500
             const initial_position = new THREE.Vector2(100, -250);
             
-            const geometry_background = new THREE.BufferGeometry();
-            // BufferGeometry is composed by multiple triangles.
-            var background_vertices = new Float32Array([
-                            0, 0, 0,
-                            L, 0, 0,
-                            L, L, 0,
+            /*Background for object A*/
+            var geometry_background_A = new THREE.BufferGeometry();
+            var vertices_background_A = new Float32Array([
+                            0,   0,   0,
+                            L/2, L/2, 0,
+                            0,   L,   0,
 
-                            L, L, 0,
-                            0, L, 0,
-                            0, 0, 0
+                            0,   L,   0,
+                            0, L/2,   0,
+                            0,   0,   0
                         ]);
-            geometry_background.setAttribute('position', new THREE.BufferAttribute(background_vertices, 3));
+            geometry_background_A.setAttribute('position', new THREE.BufferAttribute(vertices_background_A, 3));
+            geometry_background_A.name = "geometrybackground_A";
+
                 
-            const background = new THREE.Mesh( geometry_background, material_black );
+            var background_A = new THREE.Mesh( geometry_background_A, material_black );
 
-            scene.add( background );
+            scene.add( background_A );
 
-            background.position.set(initial_position.x, initial_position.y, -10)
+            background_A.position.set(initial_position.x, initial_position.y, -10)
+
+            /*Background for object B*/
+            var geometry_background_B = new THREE.BufferGeometry();
+            var vertices_background_B = new Float32Array([
+                            L/2 , L/2 , 0,
+                            L,   L,   0,
+                            0,   L,   0,
+                            0 ,   L ,   0,
+                            L/4 , 3*L/4 , 0,
+                            L/2 , L/2 , 0
+                        ]);
+            geometry_background_B.setAttribute('position', new THREE.BufferAttribute(vertices_background_B, 3));
+            geometry_background_B.name = "geometrybackground_B";
+                
+            var background_B = new THREE.Mesh( geometry_background_B, material_black);
+
+            scene.add( background_B );
+
+            background_B.position.set(initial_position.x, initial_position.y, -10)
+
+
+            /*Background for object background_C*/
+            var geometry_background_C = new THREE.BufferGeometry();
+            var vertices_background_C = new Float32Array([
+                            3*L/4 , 3*L/4 , 0,
+                            L ,     L/2 ,   0,
+                            L ,     L ,     0,
+
+                            L ,     L ,     0,
+                            7*L/8 , 7*L/8 , 0,
+                            3*L/4 , 3*L/4 , 0
+                        ]);
+            geometry_background_C.setAttribute('position', new THREE.BufferAttribute(vertices_background_C, 3));
+                
+            geometry_background_C.name = "geometrybackground_C";
+            var background_C = new THREE.Mesh( geometry_background_C, material_black);
+
+            scene.add( background_C );
+
+            background_C.position.set(initial_position.x, initial_position.y, -10)
+
+
+            /*Background for object D*/
+            var geometry_background_D = new THREE.BufferGeometry();
+            var vertices_background_D = new Float32Array([ L/2,     L/2,   0,
+                            3*L/4,   L/4,   0,
+                            L,       L/2,   0,
+
+                            L,     L/2,     0,
+                            3*L/4, 3*L/4,   0,
+                            L/2,   L/2,     0
+                        ]);
+            geometry_background_D.setAttribute('position', new THREE.BufferAttribute(vertices_background_D, 3));
+                
+            geometry_background_D.name = "geometrybackground_D";
+            var background_D = new THREE.Mesh( geometry_background_D, material_black);
+
+            scene.add( background_D );
+
+            background_D.position.set(initial_position.x, initial_position.y, -10)
+
+            /*Background for object E*/
+            var geometry_background_E = new THREE.BufferGeometry();
+            var vertices_background_E = new Float32Array([
+                            L/4,     L/4,   0,
+                            3*L/4,   L/4,   0,
+                            L/2,   L/2,     0,
+                            
+                            L/2,   L/2,     0,
+                            3*L/8,   3*L/8,     0,
+                            L/4,     L/4,   0
+                        ]);
+            geometry_background_E.setAttribute('position', new THREE.BufferAttribute(vertices_background_E, 3));
+            geometry_background_E.name = "geometrybackground_E";
+                
+            var background_E = new THREE.Mesh( geometry_background_E, material_black);
+
+            scene.add( background_E );
+
+            background_E.position.set(initial_position.x , initial_position.y , -10)
+
+            /*Background for Object F*/
+            var geometry_background_F = new THREE.BufferGeometry();
+            var vertices_background_F = new Float32Array([
+                            0,     0,   0,
+                            L/2,   0,   0,
+                            3*L/4, L/4, 0,
+
+                            3*L/4, L/4, 0,
+                            L/4,   L/4, 0,
+                            0,     0,   0
+
+                        ]);
+            geometry_background_F.setAttribute('position', new THREE.BufferAttribute(vertices_background_F, 3));
+            geometry_background_F.name = "geometrybackground_F";
+                
+            var background_F = new THREE.Mesh( geometry_background_F, material_black);
+
+            scene.add( background_F );
+
+            background_F.position.set(initial_position.x, initial_position.y, -10)
+
+            /*Background for object G*/
+            var geometry_background_G = new THREE.BufferGeometry();
+            var vertices_background_G = new Float32Array([
+                            L/2, 0,   0,
+                            L,   0,   0,
+                            L,   L/2, 0,
+
+                            L,   L/2, 0,
+                            3*L/4,   L/4, 0,
+                            L/2, 0,   0
+                        ]);
+            geometry_background_G.setAttribute('position', new THREE.BufferAttribute(vertices_background_G, 3));
+            geometry_background_G.name = "geometrybackground_G";
+                
+            var background_G = new THREE.Mesh( geometry_background_G, material_black);
+
+            scene.add( background_G );
+
+            background_G.position.set(initial_position.x, initial_position.y, -10)
+
             //-------
 
             //Creating scene objects
             const offset = 550
             var x_mean;
             var y_mean;
+
             /*Object A*/
             x_mean = L/6;
             y_mean = L/2;;
@@ -72,9 +197,16 @@
             var vertices_A = new Float32Array([
                             0 - x_mean,   0 - y_mean,   0,
                             L/2 - x_mean, L/2 - y_mean, 0,
-                            0 - x_mean,   L - y_mean,   0
+                            0 - x_mean,   L - y_mean,   0,
+                            
+                            0 - x_mean,   L - y_mean,   0,
+                            0 - x_mean,   L/2 - y_mean,   0,
+                            0 - x_mean,   0 - y_mean,   0
+
                         ]);
             geometry_A.setAttribute('position', new THREE.BufferAttribute(vertices_A, 3));
+            geometry_A.name = "geometryA";
+
                 
             var A = new THREE.Mesh( geometry_A, material_ligth_blue_green);
 
@@ -89,9 +221,14 @@
             var vertices_B = new Float32Array([
                             L/2 - x_mean, L/2 - y_mean, 0,
                             L - x_mean,   L - y_mean,   0,
-                            0 - x_mean,   L - y_mean,   0
+                            0 - x_mean,   L - y_mean,   0,
+
+                            0 - x_mean,   L - y_mean,   0,
+                            L/4 - x_mean, 3*L/4 - y_mean, 0,
+                            L/2 - x_mean, L/2 - y_mean, 0
                         ]);
             geometry_B.setAttribute('position', new THREE.BufferAttribute(vertices_B, 3));
+            geometry_B.name = "geometryB";
                 
             var B = new THREE.Mesh( geometry_B, material_orange);
 
@@ -106,10 +243,15 @@
             var vertices_C = new Float32Array([
                             3*L/4 - x_mean, 3*L/4 - y_mean, 0,
                             L - x_mean,     L/2 - y_mean,   0,
-                            L - x_mean,     L - y_mean,     0
+                            L - x_mean,     L - y_mean,     0,
+
+                            L - x_mean,     L - y_mean,     0,
+                            7*L/8 - x_mean,     7*L/8 - y_mean,     0,
+                            3*L/4 - x_mean, 3*L/4 - y_mean, 0
                         ]);
             geometry_C.setAttribute('position', new THREE.BufferAttribute(vertices_C, 3));
                 
+            geometry_C.name = "geometryC";
             var C = new THREE.Mesh( geometry_C, material_light_blue);
 
             scene.add( C );
@@ -131,6 +273,7 @@
                         ]);
             geometry_D.setAttribute('position', new THREE.BufferAttribute(vertices_D, 3));
                 
+            geometry_D.name = "geometryD";
             var D = new THREE.Mesh( geometry_D, material_red);
 
             scene.add( D );
@@ -144,9 +287,14 @@
             var vertices_E = new Float32Array([
                             L/4 - x_mean,     L/4 - y_mean,   0,
                             3*L/4 - x_mean,   L/4 - y_mean,   0,
-                            L/2 - x_mean,   L/2 - y_mean,     0
+                            L/2 - x_mean,   L/2 - y_mean,     0,
+
+                            L/2 - x_mean,   L/2 - y_mean,     0,
+                            3*L/8 - x_mean,   3*L/8 - y_mean,     0,
+                            L/4 - x_mean,     L/4 - y_mean,   0
                         ]);
             geometry_E.setAttribute('position', new THREE.BufferAttribute(vertices_E, 3));
+            geometry_E.name = "geometryE";
                 
             var E = new THREE.Mesh( geometry_E, material_green);
 
@@ -169,6 +317,7 @@
 
                         ]);
             geometry_F.setAttribute('position', new THREE.BufferAttribute(vertices_F, 3));
+            geometry_F.name = "geometryF";
                 
             var F = new THREE.Mesh( geometry_F, material_blue);
 
@@ -183,11 +332,14 @@
             var vertices_G = new Float32Array([
                             L/2 - x_mean, 0 - y_mean,   0,
                             L - x_mean,   0 - y_mean,   0,
-                            L - x_mean,   L/2 - y_mean, 0
+                            L - x_mean,   L/2 - y_mean, 0,
 
-
+                            L - x_mean,   L/2 - y_mean, 0,
+                            3*L/4 - x_mean,   L/4 - y_mean, 0,
+                            L/2 - x_mean, 0 - y_mean,   0
                         ]);
             geometry_G.setAttribute('position', new THREE.BufferAttribute(vertices_G, 3));
+            geometry_G.name = "geometryG";
                 
             var G = new THREE.Mesh( geometry_G, material_yellow);
 
@@ -197,13 +349,21 @@
 
 
             //-------
+            const objectToBackground = new Map();
+            objectToBackground.set(A, [background_A, 0]);
+            objectToBackground.set(B, [background_B, 0]);
+            objectToBackground.set(C, [background_C, 0]);
+            objectToBackground.set(D, [background_D, 0]);
+            objectToBackground.set(E, [background_E, 0]);
+            objectToBackground.set(F, [background_F, 0]);
+            objectToBackground.set(G, [background_G, 0]);
 
             var mycontrols=[A, B, C, D, E, F, G] 
 
             camera.position.z = 5;
 
             var cursor= new THREE.Mesh( new THREE.SphereGeometry(10), 
-                                        new THREE.MeshBasicMaterial({color:0xdddddd}))
+                                        new THREE.MeshBasicMaterial({color:0xffffff}))
             cursor.position.z=-900
             scene.add(cursor)
 
@@ -218,12 +378,17 @@
 
             var pan= new THREE.Vector2(0,0)
 
+            const expectedTotalArea = L*L;
+            const winThreshold = 5e-2;
+            var remainingArea = expectedTotalArea;
+
             //Constants:
             const state = {
             FREE_CURSOR: 0,
             HOVER:       1,
             DRAG_MODE:   2,
-            PAN_MODE:    3
+            PAN_MODE:    3,
+            WON:         4
             };
 
             let current_state=state.FREE_CURSOR; 
@@ -299,7 +464,26 @@
                   case state.DRAG_MODE: // drag mode
                     hover.position.x = mouse.x - pan.x
                     hover.position.y = mouse.y - pan.y
+                    //Calculate the current intersection area and update the total covered area
+                    var obj = hover;
+                    var backgroundObj =  objectToBackground.get(obj)[0];               
+                    var clipResult = clip(getListOfVertices(obj, true), getListOfVertices(backgroundObj, true));
+                    if (clipResult.length > 0) clipResult.push(clipResult[0]);
+                    objectToBackground.get(obj)[1] = AreaPolygon(clipResult);
                     current_state=state.HOVER
+
+                    //Check for winning condition:
+                    remainingArea = expectedTotalArea;
+                    for (i in mycontrols)
+                    {
+                        remainingArea -= objectToBackground.get(mycontrols[i])[1];
+                    }
+                    if (remainingArea / expectedTotalArea < winThreshold)
+                    {
+                        //Print Game Over Msg:
+                        window.alert("Congratulations, you won!\nGame Over!");
+                        current_state=state.WON;
+                    } 
                     break;
                     
                   case state.PAN_MODE: // pan mode
@@ -350,9 +534,134 @@
 
             function animate() {
                 requestAnimationFrame( animate );
+
+
                 renderer.render( scene, camera );
 
                 }
+
+
+
+
+            //This function returns the list of vertices (Vector3()) of a geometry from a mesh.
+            function getVertices( mesh ) {
+                const position = mesh.geometry.getAttribute('position');
+                var vertices = [];
+                for ( let i = 0; i < position.count; i++ ) {
+                    var vertex = new THREE.Vector3();
+                    vertex.fromBufferAttribute( position, i ); 
+                    mesh.localToWorld(vertex);
+                    vertices.push(vertex)
+                }
+                return vertices
+            }
+            
+            //This function gets the list of vertices of a mesh with the format
+            // [[x1, y1], [x2, y2], ... [xn, yn]]
+            //If noDuplicated is true, duplicated vertices are eliminated.
+            function getListOfVertices(mesh, noDuplicated)
+            {
+                var vertices = getVertices(mesh);
+                var verticesList = [];
+                for (i in vertices)
+                {
+                    if(i == vertices.length-1) {break;}
+                    if (noDuplicated)
+                    {
+                                    if(verticesList.length == 0 || (Math.abs(verticesList[verticesList.length - 1][0] - vertices[i].x) > 1e-5 || Math.abs(verticesList[verticesList.length - 1][1] - vertices[i].y) > 1e-5))
+                        {
+                            verticesList.push([vertices[i].x, vertices[i].y]);     
+                        }
+                    }
+                    else 
+                    {
+                        verticesList.push([vertices[i].x, vertices[i].y]);        
+                    }                     
+                }
+                return verticesList;
+            }
+
+
+            //Implementação da função que retorna o polígono clipado
+            //A ideia é utilizar o algoritmo de Sutherland-Hodgman
+            //Descrição do algoritmo: Começa com uma lista de inputs (vértices do polígono 'subject')
+            //Em seguida, um lado do polígono clipado é estendido indefinidamente em ambas as direções.
+            // Os vértices do polígono original entrarão no polígono clipado se estiverem do lado 'visível' da linha estendida,
+            // e novos vértices são adicionados - mais especificamente onde a linha cruza a linha estendida.
+            // O processo é repetido iterativamente para cada lado do polígono
+            function clip(subjectPolygon, clipPolygon) {
+                var cp1, cp2, s, e;
+                //Calcula se está dentro
+                var inside = function (p) {
+                  return (
+                    (cp2[0] - cp1[0]) * (p[1] - cp1[1]) > (cp2[1] - cp1[1]) * (p[0] - cp1[0])
+                  );
+                };
+                //Simples interseção algébrica
+                var intersection = function () {
+                  var dc = [cp1[0] - cp2[0], cp1[1] - cp2[1]],
+                    dp = [s[0] - e[0], s[1] - e[1]],
+                    n1 = cp1[0] * cp2[1] - cp1[1] * cp2[0],
+                    n2 = s[0] * e[1] - s[1] * e[0],
+                    n3 = 1.0 / (dc[0] * dp[1] - dc[1] * dp[0]);
+                  return [(n1 * dp[0] - n2 * dc[0]) * n3, (n1 * dp[1] - n2 * dc[1]) * n3];
+                };
+                var outputList = subjectPolygon;
+                cp1 = clipPolygon[clipPolygon.length - 1];
+                for (j in clipPolygon) {
+                  var cp2 = clipPolygon[j];
+                  var inputList = outputList;
+                  outputList = [];
+                  s = inputList[inputList.length - 1];
+                  for (i in inputList) {
+                    var e = inputList[i];
+                    if (inside(e)) {
+                      if (!inside(s)) {
+                        outputList.push(intersection()); // Coloco aqui a interseção caso o ponto não esteja dentro
+                      }
+                      outputList.push(e);
+                    } else if (inside(s)) {
+                      outputList.push(intersection());
+                    }
+                    s = e;
+                  }
+                  cp1 = cp2;
+                }
+                //Transform from [x, y] to Vector2() list:
+                var vertices = [];
+                for ( i in outputList ) {
+                    var vertex = new THREE.Vector3();
+                    vertex.x = outputList[i][0];
+                    vertex.y = outputList[i][1];
+                    vertices.push(vertex)
+                }
+                return vertices;
+              }
+              
+
+              //Função que calcula a área de um polígono dado seus vértices
+              function AreaPolygon(vertices) {
+                  var total = 0;
+
+                  for (var i = 0, l = vertices.length; i < l; i++) {
+                    var addX = vertices[i].x;
+                    var addY = vertices[i == vertices.length - 1 ? 0 : i + 1].y;
+                    var subX = vertices[i == vertices.length - 1 ? 0 : i + 1].x;
+                    var subY = vertices[i].y;
+
+                    total += (addX * addY * 0.5);
+                    total -= (subX * subY * 0.5);
+                  }
+                  var area = total;
+                  if(total < 0){
+                    area = -total;
+                  }
+                  return area;
+                }
+
+
+
+
             //-------
 
             //Call the animation loop
